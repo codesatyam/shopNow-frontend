@@ -2,14 +2,27 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense } from "react";
 import HomePage from "./pages/HomePage";
 import { Layout } from "./layout";
+import { Toaster } from 'react-hot-toast';
+import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage";
 
 const routes = [
   {
     path: "/",
     component: HomePage,
-    props: {}, // Optionally, you can pass props to the component
+    props: {}, 
   },
-  // Add more route objects as needed
+  {
+    path: "/login",
+    component: LoginPage,
+    props: {},  
+  },
+  {
+    path: "/signup",
+    component: SignUpPage,
+    props: {},  
+  }
+   
 ];
 
 function App() {
@@ -36,6 +49,7 @@ function App() {
           />
         ))}
       </Routes>
+      <Toaster/>
     </Router>
   );
 }
