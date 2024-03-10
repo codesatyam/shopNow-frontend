@@ -13,26 +13,27 @@ export const UpComingSlider = () => {
     autoplay: true,
     slidesToScroll: 1,
     pauseOnHover: true,
+    className:"w-full"
   };
   return (
-    <div className="w-full">
+    <div className="">
       <Slider ref={sliderRef} {...settings}>
-        <div className="bg-green-600 w-full h-[300px]">
+        <div className="bg-green-600  h-[300px]">
           <h3></h3>
         </div>
-        <div className="bg-pink-500 w-full h-[300px]">
+        <div className="bg-pink-500  h-[300px]">
           <h3></h3>
         </div>
-        <div className="bg-cyan-500 w-full h-[300px]">
+        <div className="bg-cyan-500  h-[300px]">
           <h3></h3>
         </div>
-        <div className="bg-blue-700 w-full h-[300px]">
+        <div className="bg-blue-700   h-[300px]">
           <h3></h3>
         </div>
-        <div className="bg-yellow-500 w-full h-[300px]">
+        <div className="bg-yellow-500   h-[300px]">
           <h3></h3>
         </div>
-        <div className="bg-red-400 w-full h-[300px]">
+        <div className="bg-red-400  h-[300px]">
           <h3></h3>
         </div>
       </Slider>

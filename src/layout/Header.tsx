@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
       <div className="mx-auto px-4 sm:px-6 py-4 sm:py-2 sm:pt-4">
         <div className="flex items-center justify-between w-full">
           {/* Menu Icon */}
-          <div className="">
+          <div className="sm:hidden">
             <span onClick={() => setIsOpen(!isOpen)}>
               <MenuIcon />
             </span>
@@ -74,7 +74,7 @@ export const Header: React.FC = () => {
       <div
         className={`${
           isOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
-        } absolute left-0 top-0 bg-white shadow-lg sm:hidden py-2  transition-transform duration-500 ease-in-out`}
+        } absolute left-0 top-0 bg-white shadow-lg sm:hidden py-2 z-50 transition-transform duration-500 ease-in-out`}
       >
         {/* Close Button */}
         <div>
@@ -90,12 +90,12 @@ export const Header: React.FC = () => {
           {HeaderData.menu.map((item, index) => (
             <span
               key={index}
-              className="text-center py-2 flex gap-2 items-center"
+              className="text-center py-2 flex gap-2 items-center justify-center"
             >
               <Link to={item.path}>{item.title}</Link>
-              <span>
+              {/* <span>
                 <DropDownIcon className="hover:rotate-180 transition-transform duration-500 ease-in-out" />
-              </span>
+              </span> */}
             </span>
           ))}
         </div>
