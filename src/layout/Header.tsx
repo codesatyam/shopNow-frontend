@@ -49,9 +49,10 @@ export const Header: React.FC = () => {
               </span>
             </div>
             <div>
-              <span className="cursor-pointer">
+              <Link to={"/profile"}>   <span className="cursor-pointer">
                 <ProfileIcon />
-              </span>
+              </span></Link>
+            
             </div>
           </div>
         </div>

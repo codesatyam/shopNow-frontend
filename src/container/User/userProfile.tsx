@@ -2,7 +2,6 @@ import { ChangeEvent, SetStateAction, useState } from 'react';
 import { FiEdit } from 'react-icons/fi';
 import {
     Card,
-    Typography,
     List,
     ListItem,
     ListItemPrefix,
@@ -57,52 +56,54 @@ export const UserProfile = () => {
   };
 
   return (
-    <div className="flex min-h-[83vh] bg-slate-100">
+    <div className="flex min-h-[83vh] bg-slate-100  ">
       {/* Sidebar */}
-      <div className="w-1/5">
-      <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl rounded-none shadow-blue-gray-900/5">
-      <List>
-      <ListItem>
-          <ListItemPrefix>
-            <UserCircleIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Profile
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <PresentationChartBarIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Dashboard
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <ShoppingBagIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          E-Commerce
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <InboxIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Inbox
-          <ListItemSuffix>
-            <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
-          </ListItemSuffix>
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <Cog6ToothIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Settings
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <PowerIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Log Out
-        </ListItem>
-      </List>
-    </Card>
+      <div className="sm:w-1/3 lg:w-1/5 h-full">
+      <Card className="w-full min-h-[83vh] max-w-[20rem] p-4 shadow-xl rounded-none shadow-blue-gray-900/5" placeholder="">
+  <List placeholder="">
+    <ListItem placeholder="Profile">
+      <ListItemPrefix placeholder="">
+        <UserCircleIcon className="h-5 w-5" />
+      </ListItemPrefix>
+      Profile
+    </ListItem>
+    <ListItem placeholder="">
+      <ListItemPrefix placeholder="">
+        <PresentationChartBarIcon className="h-5 w-5" />
+      </ListItemPrefix>
+      Dashboard
+    </ListItem>
+    <ListItem placeholder="">
+      <ListItemPrefix placeholder="">
+        <ShoppingBagIcon className="h-5 w-5" />
+      </ListItemPrefix>
+      E-Commerce
+    </ListItem>
+    <ListItem placeholder="">
+      <ListItemPrefix placeholder="">
+        <InboxIcon className="h-5 w-5" />
+      </ListItemPrefix>
+      Inbox
+      <ListItemSuffix placeholder="">
+        <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
+      </ListItemSuffix>
+    </ListItem>
+    <ListItem placeholder="">
+      <ListItemPrefix placeholder="">
+        <Cog6ToothIcon className="h-5 w-5" />
+      </ListItemPrefix>
+      Settings
+    </ListItem>
+    <ListItem placeholder="">
+      <ListItemPrefix placeholder="">
+        <PowerIcon className="h-5 w-5" />
+      </ListItemPrefix>
+      Log Out
+    </ListItem>
+  </List>
+</Card>
+
+    
       </div>
       
       {/* Main Content */}
