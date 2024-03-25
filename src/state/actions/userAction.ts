@@ -10,7 +10,7 @@ export const loginUser = (email: string, password: string) => async (dispatch: a
         const user = await login(email, password);
         dispatch({ type: ActionTypes.LOGIN_SUCCESS, payload: user });
     } catch (error) {
-        dispatch({ type: ActionTypes.LOGIN_FAILURE, payload: error.message });
+        dispatch({ type: ActionTypes.LOGIN_FAILURE, payload: error});
     }
 };
 
@@ -21,7 +21,7 @@ export const logoutUser = () => async (dispatch: any) => {
         await logout();
         dispatch({ type: ActionTypes.LOGOUT_SUCCESS });
     } catch (error) {
-        dispatch({ type: ActionTypes.LOGOUT_FAILURE, payload: error.message });
+        dispatch({ type: ActionTypes.LOGOUT_FAILURE, payload: error });
     }
 };
 
@@ -32,6 +32,6 @@ export const signupUser = (name: string, email: string, password: string) => asy
         const user = await signup(name, email, password);
         dispatch({ type: ActionTypes.SIGNUP_SUCCESS, payload: user });
     } catch (error) {
-        dispatch({ type: ActionTypes.SIGNUP_FAILURE, payload: error.message });
+        dispatch({ type: ActionTypes.SIGNUP_FAILURE, payload: error});
     }
 };
