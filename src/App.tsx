@@ -5,6 +5,7 @@ import { Layout } from "./layout";
 import { Toaster } from 'react-hot-toast';
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import UserProfilePage from "./pages/UserProfilePage";
 
 const routes = [
   {
@@ -20,6 +21,11 @@ const routes = [
   {
     path: "/signup",
     component: SignUpPage,
+    props: {},  
+  },
+  {
+    path: "/profile",
+    component: UserProfilePage,
     props: {},  
   }
    

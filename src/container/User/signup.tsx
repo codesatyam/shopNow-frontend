@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
@@ -13,7 +14,7 @@ interface FormValues {
 }
 
 export const SignUp: React.FC = () => {
-    
+    const navigate=useNavigate();
     const validationSchema = Yup.object().shape({
         name: Yup.string().required('Name is required'),
         email: Yup.string().email('Invalid email').required('Email is required'),
@@ -26,32 +27,29 @@ export const SignUp: React.FC = () => {
    
     const handleSubmit = async (values: FormValues, { setSubmitting, resetForm }: { setSubmitting: (isSubmitting: boolean) => void; resetForm: () => void; }) => {
         try {
-            // Make API call to register user
             const response = await signup(values.name, values.email, values.password);
-            
-            // Handle success
-            console.log(response); // Log response data
-            resetForm(); // Reset form
+            console.log(response); 
+            resetForm(); 
             toast.success('Signup successful! Please login.', {
                 duration: 4000,
                 position: 'top-center',
             });
-        } catch (error) {
-            // Handle error
+            navigate("/login")
+        } catch (error:any) {
             console.error('Error:', error);
-            toast.error('Error occurred. Please try again later.', {
+            toast.error(error.message, {
                 duration: 4000,
                 position: 'top-center',
             });
         } finally {
-            setSubmitting(false); // Set submitting to false
+            setSubmitting(false);
         }
     };
 
     return (
-        <div className="flex justify-center items-center mt-8">
-            <div className="bg-gray-100 px-8 py-2 w-[380px] rounded shadow-md">
-                <h1 className="text-2xl font-bold mb-4 text-center">Sign Up</h1>
+        <div className="flex justify-center items-center min-h-[83vh]">
+            <div className="bg-gray-100 mx-2 p-2 md:px-8 py-2 w-[380px] rounded shadow-md">
+                <h1 className="text-2xl font-bold mb-2 text-center">Sign Up</h1>
                 <Formik
                     initialValues={{ name: '', email: '', password: '', confirmPassword: '' }}
                     validationSchema={validationSchema}
@@ -82,7 +80,7 @@ export const SignUp: React.FC = () => {
                             </div>
                             <div className='flex justify-center'> 
 
-                            <button type="submit" className="bg-blue-500 text-white px-6 py-1.5 rounded disabled:bg-gray-400 disabled:cursor-not-allowed">
+                            <button type="submit" className="bg-blue-500 text-white px-5 md:px-6 py-1.5 rounded disabled:bg-gray-400 disabled:cursor-not-allowed">
                                 {isSubmitting ? 'Signing up...' : 'Sign Up'}
                             </button>
                             </div>

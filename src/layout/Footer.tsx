@@ -16,11 +16,11 @@ const Footer: React.FC = () => {
           <h3 className="text-lg font-bold">Connect with Us</h3>
           <ul className="mt-2">
             <li className=' hover:underline'><i className="fas fa-envelope text-white mr-2"></i>
-              <a href="mailto:satyam84ya129@gmail.com" className="text-gray-400 hover:text-white">satyam84ya129@gmail.com</a>
+              <a href="mailto:satyam84ya129@gmail.com" className="text-gray-400 hover:text-white">coderecse5@gmail.com</a>
             </li>
             <li className=' hover:underline'>
               <i className="fas fa-phone text-white mr-2"></i>
-              <a href="tel:7905562832" className="text-gray-400 hover:text-white">7905562832</a>
+              <a href="tel:7905562832" className="text-gray-400 hover:text-white">+917905562832</a>
             </li>
             <li className='hover:underline'>
               <i className="fab fa-linkedin-in text-white mr-2"></i>

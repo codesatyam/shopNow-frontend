@@ -1,3 +1,3 @@
 // export * from './Home';
 export * from './Product'
-export * from './Userprofile'
+export * from './User'
